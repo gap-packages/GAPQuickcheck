@@ -1,3 +1,13 @@
+################################################################################################
+##
+#W test_infrastructure.gi     GAP Quickcheck     Victor Vasilyev
+##
+## Implementation of the test infrastucture for the GAP Quickcheck package.
+##
+#Y Copyright (C) 2018 Univerisity of St. Andrews, North Haugh, St. Andrews, Fife
+#Y                                                KY16 9SS, Scotland
+##
+
 max_size := 100;
 no_reps := 1;
 cache_file_name := ".gap-quickcheck-cache.g";
@@ -48,6 +58,10 @@ RemoveSeed := function(func_name, seed)
   SaveSeed();
 end;
 
+################################################################################################
+##
+#F Expect(<func>) . . . . . test <func>. see the tutorial for more details.
+##
 InstallGlobalFunction(Expect, function(func)
   local given, seed, rs;
   seed := GetSeed(NameFunction(func));
@@ -187,10 +201,22 @@ InstallGlobalFunction(Expect, function(func)
   return rec(given := given);
 end);
 
+################################################################################################
+##
+#F SetQuickcheckMaxSize(<new_max>) . . . . . set the maximum size that Quickcheck will test to
+## <new_max>.
+##
 InstallGlobalFunction(SetQuickcheckMaxSize, function(new_max)
   max_size := new_max;
 end);
 
+################################################################################################
+##
+#F SetQuickcheckNumberOfReps(<new_no>) . . . . . set the number of tests Quickcheck will run for
+## every size to <new_no>.
+##
 InstallGlobalFunction(SetQuickcheckNumberOfReps, function(new_no)
   no_reps := new_no;
 end);
+
+#E test_infrastucture.gi . . . . . ends here
