@@ -1,7 +1,3 @@
-#
-# GAPQuickcheck: Library for property testing in GAP.
-#
-# Reading the declaration part of the package.
-#
-
-ReadPackage( "GAPQuickcheck", "gap/GAPQuickcheck.gd");
+ReadPackage("GAPQuickcheck", "gap/seed.gd");
+ReadPackage("GAPQuickcheck", "gap/randomgen.gd");
+ReadPackage("GAPQuickcheck", "gap/test_infrastructure.gd");

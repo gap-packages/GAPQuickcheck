@@ -1,0 +1,16 @@
+DeclareGlobalFunction("QuickcheckInt");
+DeclareGlobalFunction("QuickcheckList");
+DeclareGlobalFunction("QuickcheckSet");
+DeclareGlobalFunction("QuickcheckObject");
+DeclareGlobalFunction("QuickcheckRecord");
+DeclareGlobalFunction("QuickcheckPermutation");
+DeclareGlobalFunction("QuickcheckAbelianGroup");
+DeclareGlobalFunction("QuickcheckQuaternionGroup");
+DeclareGlobalFunction("QuickcheckDihedralGroup");
+DeclareGlobalFunction("QuickcheckPermutationGroup");
+DeclareGlobalFunction("QuickcheckCoset");
+DeclareGlobalFunction("QuickcheckDigraph");
+DeclareGlobalFunction("QuickcheckCyclicGroup");
+DeclareGlobalFunction("QuickcheckFreeAbelianGroup");
+DeclareGlobalFunction("QuickcheckGroup");
+DeclareGlobalFunction("QuickcheckSmallPermutationGroup");
