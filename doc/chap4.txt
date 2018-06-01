@@ -1,0 +1,162 @@
+  
+  [1X4 [33X[0;0YGAPQuickcheck automatic generated documentation[133X[101X
+  
+  
+  [1X4.1 [33X[0;0YGAPQuickcheck automatic generated documentation of global functions[133X[101X
+  
+  [1X4.1-1 QuickcheckInt[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckInt[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random integer[133X
+  
+  [33X[0;0YCreates  a  random  integer  in  the  range of 1-max using the random source
+  provided.[133X
+  
+  [1X4.1-2 QuickcheckList[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckList[102X( [3Xgenerator[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya function that creates a random list[133X
+  
+  [33X[0;0YMakes  a  function  that takes in two arguments- a maximum size and a random
+  source,  and  returns  a  list  of size less than or equal to max of objects
+  created  by the generator function. The generator function must also take in
+  two arguments- a maximum size and a random source.[133X
+  
+  [1X4.1-3 QuickcheckSet[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckSet[102X( [3Xgenerator[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya function that creates a random set[133X
+  
+  [33X[0;0YMakes  a  function  that takes in two arguments- a maximum size and a random
+  source,  and  returns  a  set  of  size less than or equal to max of objects
+  created  by the generator function. The generator function must also take in
+  two arguments- a maximum size and a random source.[133X
+  
+  [1X4.1-4 QuickcheckObject[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckObject[102X( [3Xconstructor[103X, [3Xarg_gens[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya function that creates a random object[133X
+  
+  [33X[0;0YMakes  a  function that, given a maximum size and a random source, generates
+  an  object  using  the  constructor  function  provided, whose arguments are
+  generated  by  the arg_gens list. arg_gens must be a list of functions, each
+  of which takes a maximum size and a random source.[133X
+  
+  [1X4.1-5 QuickcheckRecord[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckRecord[102X( [3Xattribute_names[103X, [3Xarg_gens[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya function that creates a random record[133X
+  
+  [33X[0;0YMakes a function that, given a maximum size and a random source, generates a
+  record  whose  fields  have  the  names  given by attribute_names and values
+  generated  by  arg_gens. attribute_names must be a list of strings. arg_gens
+  must be a list of functions, each of which takes a maximum size and a random
+  source.[133X
+  
+  [1X4.1-6 QuickcheckPermutation[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckPermutation[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random permutation[133X
+  
+  [33X[0;0YGenerates  a  permutation  of  size  no more than the given maximum with the
+  random source provided using Floyd's algorithm.[133X
+  
+  [1X4.1-7 QuickcheckAbelianGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckAbelianGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random Abelian group[133X
+  
+  [33X[0;0YGenerates  an  Abelian  group of size no more than the maximum size given by
+  creating  a  list  of  random  integers using the provided random source and
+  constructing the group with those.[133X
+  
+  [1X4.1-8 QuickcheckQuaternionGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckQuaternionGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya quaternion group[133X
+  
+  [33X[0;0YGenerates a quaternion group of maximum size given rounded up to the nearest
+  multiple of 4.[133X
+  
+  [1X4.1-9 QuickcheckDihedralGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckDihedralGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya dihedral group[133X
+  
+  [33X[0;0YGenerates  a  dihedral  group  of  the  maximum size given rounded up to the
+  nearest multiple of 4.[133X
+  
+  [1X4.1-10 QuickcheckPermutationGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckPermutationGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random permutation group.[133X
+  
+  [33X[0;0YGenerates  a permutation group by creating a list of permutations of size no
+  more than the given maximum and constructing the group using that list.[133X
+  
+  [1X4.1-11 QuickcheckSmallPermutationGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckSmallPermutationGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random small permutation group[133X
+  
+  [33X[0;0YSelects a random group of size max from the Small Groups package.[133X
+  
+  [1X4.1-12 QuickcheckCoset[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckCoset[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random coset[133X
+  
+  [33X[0;0YGenerates  a  coset  by  multiplying a random permutation group and a random
+  permutation.[133X
+  
+  [1X4.1-13 QuickcheckDigraph[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckDigraph[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random digraph[133X
+  
+  [33X[0;0YGenerates  a digraph by creating a range of enumerated nodes of size no more
+  than  the  given  maximum  and  also  source and range lists that are random
+  samples of that list.[133X
+  
+  [1X4.1-14 QuickcheckCyclicGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckCyclicGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya cyclic group[133X
+  
+  [33X[0;0YGenerates the cyclic group of the size provided.[133X
+  
+  [1X4.1-15 QuickcheckFreeAbelianGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckFreeAbelianGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya free Abelian group[133X
+  
+  [33X[0;0YGenerate the free Abelian group of the size provided.[133X
+  
+  [1X4.1-16 QuickcheckGroup[101X
+  
+  [33X[1;0Y[29X[2XQuickcheckGroup[102X( [3Xmax[103X, [3Xrandomsource[103X ) [32X function[133X
+  [6XReturns:[106X  [33X[0;10Ya random group.[133X
+  
+  [33X[0;0YSelects   a  random  group  constructor  and  calls  it  with  the  max  and
+  randomsource arguments.[133X
+  
+  [1X4.1-17 Expect[101X
+  
+  [33X[1;0Y[29X[2XExpect[102X( [3Xfunc[103X ) [32X function[133X
+  
+  [33X[0;0YTests   the   provided   function.   See  the  tutorial  for  more  detailed
+  documentation.[133X
+  
+  [1X4.1-18 SetQuickcheckMaxSize[101X
+  
+  [33X[1;0Y[29X[2XSetQuickcheckMaxSize[102X( [3Xnew_max[103X ) [32X function[133X
+  
+  [33X[0;0YSets the maximum size the Quickcheck will test to the provided new maximum.[133X
+  
+  [1X4.1-19 SetQuickcheckNumberOfReps[101X
+  
+  [33X[1;0Y[29X[2XSetQuickcheckNumberOfReps[102X( [3Xnew_no[103X ) [32X function[133X
+  
+  [33X[0;0YSet  the  number of tests Quickcheck will run for every size to the provided
+  new number.[133X
+  

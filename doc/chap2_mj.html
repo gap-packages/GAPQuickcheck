@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<title>GAP (GAPQuickcheck) - Chapter 2: Expect Function</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<meta name="generator" content="GAPDoc2HTML" />
+<link rel="stylesheet" type="text/css" href="manual.css" />
+<script src="manual.js" type="text/javascript"></script>
+<script type="text/javascript">overwriteStyle();</script>
+</head>
+<body class="chap2"  onload="jscontent()">
+
+
+<div class="chlinktop"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<div class="chlinkprevnexttop">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+<p id="mathjaxlink" class="pcenter"><a href="chap2.html">[MathJax off]</a></p>
+<p><a id="X7889CCD7843D2F76" name="X7889CCD7843D2F76"></a></p>
+<div class="ChapSects"><a href="chap2_mj.html#X7889CCD7843D2F76">2 <span class="Heading">Expect Function</span></a>
+</div>
+
+<h3>2 <span class="Heading">Expect Function</span></h3>
+
+<p>The core of this package is the Expect function. It lets the user encapsulate a function that that they wish to test and define the test. Currently, there are four ways to use Expect:</p>
+
+
+<ul>
+<li><p>To test that the result of a function satisfies certain predicates. To do this, encapsulate the function in Expect, pass it the argument generators using .given and call .to_have_properties on it, listing the predicates that the result should satisfy.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">func := function(l)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  Sort(l);</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">  return l;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">end;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Expect(func).given([QuickcheckList(QuickcheckInt)])</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.to_have_properties(IsSortedList);</span>
+</pre></div>
+
+
+<ul>
+<li><p>To test that two functions, given the same data, return the same result. To do this, wrap one of the functions in Expect, pass it the argument generators it requires using .given, and the second function using .to_equal. To specify what arguments need to be given to the second function, the final function in the chain, .on_arguments, takes in a list of indices that specify which arguments of the ones given to the first function should be given to the second one.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">func1 := function(G, H)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  return Set(Intersection(G,H));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">end;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">func2 := function(G, H)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">  return Intersection(Set(G), Set(H));</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">end;</span>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Expect(func1)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.given([QuickcheckSmallPermutationGroup, QuickcheckSmallPermutationGroup])</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.to_equal(func2)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.on_arguments([1,2]);</span>
+</pre></div>
+
+
+<ul>
+<li><p>To test that a function does not break. To do this, wrap the function in Expect, give it argument generators using .given and call .to_not_break on it. This test will only fail if the function breaks.</p>
+
+</li>
+</ul>
+
+<div class="example"><pre>
+<span class="GAPprompt">gap&gt;</span> <span class="GAPinput">Expect(Size)</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.given([QuickcheckGroup])</span>
+<span class="GAPprompt">&gt;</span> <span class="GAPinput">.to_not_break();</span>
+</pre></div>
+
+
+<ul>
+<li><p>To test that a function breaks. This works in exactly the same way as the test for a function not breaking but fails in all cases where .to_no_break passes and vice versa.</p>
+
+</li>
+</ul>
+
+<div class="chlinkprevnextbot">&nbsp;<a href="chap0_mj.html">[Top of Book]</a>&nbsp;  <a href="chap0_mj.html#contents">[Contents]</a>&nbsp;  &nbsp;<a href="chap1_mj.html">[Previous Chapter]</a>&nbsp;  &nbsp;<a href="chap3_mj.html">[Next Chapter]</a>&nbsp;  </div>
+
+
+<div class="chlinkbot"><span class="chlink1">Goto Chapter: </span><a href="chap0_mj.html">Top</a>  <a href="chap1_mj.html">1</a>  <a href="chap2_mj.html">2</a>  <a href="chap3_mj.html">3</a>  <a href="chap4_mj.html">4</a>  <a href="chapInd_mj.html">Ind</a>  </div>
+
+<hr />
+<p class="foot">generated by <a href="http://www.math.rwth-aachen.de/~Frank.Luebeck/GAPDoc">GAPDoc2HTML</a></p>
+</body>
+</html>

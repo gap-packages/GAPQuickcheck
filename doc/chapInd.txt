@@ -1,0 +1,26 @@
+  
+  
+  [1XIndex[101X
+  
+  [2XExpect[102X 4.1-17 
+  [2XQuickcheckAbelianGroup[102X 4.1-7 
+  [2XQuickcheckCoset[102X 4.1-12 
+  [2XQuickcheckCyclicGroup[102X 4.1-14 
+  [2XQuickcheckDigraph[102X 4.1-13 
+  [2XQuickcheckDihedralGroup[102X 4.1-9 
+  [2XQuickcheckFreeAbelianGroup[102X 4.1-15 
+  [2XQuickcheckGroup[102X 4.1-16 
+  [2XQuickcheckInt[102X 4.1-1 
+  [2XQuickcheckList[102X 4.1-2 
+  [2XQuickcheckObject[102X 4.1-4 
+  [2XQuickcheckPermutation[102X 4.1-6 
+  [2XQuickcheckPermutationGroup[102X 4.1-10 
+  [2XQuickcheckQuaternionGroup[102X 4.1-8 
+  [2XQuickcheckRecord[102X 4.1-5 
+  [2XQuickcheckSet[102X 4.1-3 
+  [2XQuickcheckSmallPermutationGroup[102X 4.1-11 
+  [2XSetQuickcheckMaxSize[102X 4.1-18 
+  [2XSetQuickcheckNumberOfReps[102X 4.1-19 
+  
+  
+  -------------------------------------------------------

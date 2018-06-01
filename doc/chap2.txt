@@ -1,0 +1,56 @@
+  
+  [1X2 [33X[0;0YExpect Function[133X[101X
+  
+  [33X[0;0YThe  core  of  this  package  is  the  Expect  function.  It  lets  the user
+  encapsulate  a  function  that  that  they wish to test and define the test.
+  Currently, there are four ways to use Expect:[133X
+  
+  [30X    [33X[0;6YTo test that the result of a function satisfies certain predicates. To
+        do  this,  encapsulate  the  function  in Expect, pass it the argument
+        generators  using  .given  and call .to_have_properties on it, listing
+        the predicates that the result should satisfy.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xfunc := function(l)[127X[104X
+    [4X[25X>[125X [27X  Sort(l);[127X[104X
+    [4X[25Xgap>[125X [27X  return l;[127X[104X
+    [4X[25Xgap>[125X [27Xend;[127X[104X
+    [4X[25Xgap>[125X [27XExpect(func).given([QuickcheckList(QuickcheckInt)])[127X[104X
+    [4X[25X>[125X [27X.to_have_properties(IsSortedList);[127X[104X
+  [4X[32X[104X
+  
+  [30X    [33X[0;6YTo  test  that  two  functions,  given  the same data, return the same
+        result.  To  do this, wrap one of the functions in Expect, pass it the
+        argument  generators it requires using .given, and the second function
+        using  .to_equal.  To  specify  what arguments need to be given to the
+        second function, the final function in the chain, .on_arguments, takes
+        in a list of indices that specify which arguments of the ones given to
+        the first function should be given to the second one.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27Xfunc1 := function(G, H)[127X[104X
+    [4X[25X>[125X [27X  return Set(Intersection(G,H));[127X[104X
+    [4X[25Xgap>[125X [27Xend;[127X[104X
+    [4X[25Xgap>[125X [27Xfunc2 := function(G, H)[127X[104X
+    [4X[25X>[125X [27X  return Intersection(Set(G), Set(H));[127X[104X
+    [4X[25Xgap>[125X [27Xend;[127X[104X
+    [4X[25Xgap>[125X [27XExpect(func1)[127X[104X
+    [4X[25X>[125X [27X.given([QuickcheckSmallPermutationGroup, QuickcheckSmallPermutationGroup])[127X[104X
+    [4X[25X>[125X [27X.to_equal(func2)[127X[104X
+    [4X[25X>[125X [27X.on_arguments([1,2]);[127X[104X
+  [4X[32X[104X
+  
+  [30X    [33X[0;6YTo  test that a function does not break. To do this, wrap the function
+        in   Expect,  give  it  argument  generators  using  .given  and  call
+        .to_not_break on it. This test will only fail if the function breaks.[133X
+  
+  [4X[32X  Example  [32X[104X
+    [4X[25Xgap>[125X [27XExpect(Size)[127X[104X
+    [4X[25X>[125X [27X.given([QuickcheckGroup])[127X[104X
+    [4X[25X>[125X [27X.to_not_break();[127X[104X
+  [4X[32X[104X
+  
+  [30X    [33X[0;6YTo  test that a function breaks. This works in exactly the same way as
+        the  test  for  a  function  not breaking but fails in all cases where
+        .to_no_break passes and vice versa.[133X
+  

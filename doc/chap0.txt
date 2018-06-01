@@ -1,1 +1,57 @@
-Placeholder
+  
+  
+                                [1X GAPQuickcheck [101X
+  
+  
+                     [1X Library for property testing in [5XGAP[105X. [101X
+  
+  
+                                      0.1
+  
+  
+                                  22 May 2018
+  
+  
+                                Victor Vasilyev
+  
+  
+  
+  Victor Vasilyev
+      Email:    [7Xmailto:vv20@st-andrews.ac.uk[107X
+      Homepage: [7XTODO[107X
+      Address:  [33X[0;14YTODO[133X
+  
+  
+  
+  -------------------------------------------------------
+  
+  
+  [1XContents (GAPQuickcheck)[101X
+  
+  1 [33X[0;0YCaching[133X
+  2 [33X[0;0YExpect Function[133X
+  3 [33X[0;0YArgument Generators[133X
+  4 [33X[0;0YGAPQuickcheck automatic generated documentation[133X
+    4.1 [33X[0;0YGAPQuickcheck automatic generated documentation of global functions[133X
+      4.1-1 QuickcheckInt
+      4.1-2 QuickcheckList
+      4.1-3 QuickcheckSet
+      4.1-4 QuickcheckObject
+      4.1-5 QuickcheckRecord
+      4.1-6 QuickcheckPermutation
+      4.1-7 QuickcheckAbelianGroup
+      4.1-8 QuickcheckQuaternionGroup
+      4.1-9 QuickcheckDihedralGroup
+      4.1-10 QuickcheckPermutationGroup
+      4.1-11 QuickcheckSmallPermutationGroup
+      4.1-12 QuickcheckCoset
+      4.1-13 QuickcheckDigraph
+      4.1-14 QuickcheckCyclicGroup
+      4.1-15 QuickcheckFreeAbelianGroup
+      4.1-16 QuickcheckGroup
+      4.1-17 Expect
+      4.1-18 SetQuickcheckMaxSize
+      4.1-19 SetQuickcheckNumberOfReps
+  
+  
+  [32X
