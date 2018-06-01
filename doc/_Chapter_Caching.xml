@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is an automatically generated file. -->
+<Chapter Label="Chapter_Caching">
+<Heading>Caching</Heading>
+
+<P/>
+GAP Quickcheck uses random arguments to test functions. This means that a bug that may come up
+with a particular combination of arguments may be lost and untraceable. To prevent this, the
+package caches the seeds of failed tests. When a function is tested, the testing engine looks
+for the cache file. If it is present in the directory, and has seeds saved for the function
+being tested, it will use the cached seed in order to replicate the failed test. Once a seed is
+no longer producing failed test, it is removed from cache.
+</Chapter>
+

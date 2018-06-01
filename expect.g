@@ -1,4 +1,4 @@
-#! @Chapter Expect Function.
+#! @Chapter Expect Function
 LoadPackage("GAPQuickcheck");
 
 #! The core of this package is the Expect function. It lets the user encapsulate a function that

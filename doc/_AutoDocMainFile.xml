@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- This is an automatically generated file. -->
+<#Include SYSTEM "_Chapter_Caching.xml">
 <#Include SYSTEM "_Chapter_Expect_Function.xml">
+<#Include SYSTEM "_Chapter_Argument_Generators.xml">
 <#Include SYSTEM "_Chapter_GAPQuickcheck_automatic_generated_documentation.xml">
