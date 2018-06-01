@@ -4,11 +4,7 @@
 <Chapter Label="Chapter_Examples_of_GAP_Quickcheck_package">
 <Heading>Examples of GAP Quickcheck package.</Heading>
 
-<Log><![CDATA[
-logging and shit
-]]></Log>
-
-
+So I can just write things like this?
 <Example><![CDATA[
 gap> func1 := function(G, H)
 >   return Set(Intersection(G,H));
